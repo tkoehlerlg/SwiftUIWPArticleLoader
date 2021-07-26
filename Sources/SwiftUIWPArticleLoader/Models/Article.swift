@@ -7,14 +7,15 @@
 
 import SwiftUI
 
-struct Article: Codable, Identifiable {
+struct Article: Identifiable {
     let id: Int
     let date: String
-    let title: Content
+    let title: String
     let link: String
-    let categories: [Int]
+    let categories: [Category]
     let type: String
     let status: String
+    let author: Author
 
     var dateText: String? {
         let dateFormatter = DateFormatter()
@@ -36,14 +37,11 @@ struct Article: Codable, Identifiable {
     static var mock: Self = .init(
         id: 0,
         date: "2021-04-16T21:55:50",
-        title: Content(rendered: "Test Title"),
+        title: "Test Title",
         link: "https://google.de",
-        categories: [],
+        categories: [.mock],
         type: "Post",
-        status: "open"
+        status: "open",
+        author: .mock
     )
-}
-
-struct Content: Codable {
-    let rendered: String
 }
