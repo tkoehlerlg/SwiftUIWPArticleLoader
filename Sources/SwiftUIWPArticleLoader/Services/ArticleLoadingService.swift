@@ -17,7 +17,7 @@ struct ArticleLoadingService {
                     guard let data = data else { return }
                     do {
                         let articles = try JSONDecoder().decode([ContentfulArticle].self, from: data)
-//                        promise(.success(articles)) TODO: Convert
+                        promise(.success(articles.map({ Article(from: $0) })))
                     } catch {
                         promise(.failure(error))
                     }

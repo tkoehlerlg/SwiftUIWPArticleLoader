@@ -24,12 +24,12 @@ class User: Identifiable {
     let profileImageLoader: ImageLoader?
 
     init(from contentful: ContentfulUser) {
-        self.id = id
-        self.name = name
-        self.url = url
-        self.description = description
-        self.link = link
-        self.slug = slug
+        id = contentful.id
+        name = contentful.name
+        url = contentful.url
+        description = contentful.description
+        link = contentful.link
+        slug = contentful.slug
         profileImageLoader = ImageLoader(url: contentful.avatarURLs.high)
     }
 }
