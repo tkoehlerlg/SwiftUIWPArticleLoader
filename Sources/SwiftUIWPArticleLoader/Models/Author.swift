@@ -1,3 +1,10 @@
+//
+//  Author.swift
+//
+//
+//  Created by Torben Köhler on 30.07.21.
+//
+
 struct Author: Codable {
     let id: Int
     let link: String
@@ -13,3 +20,4 @@ struct Author: Codable {
         profileImageLink: ""
     )
 }
+

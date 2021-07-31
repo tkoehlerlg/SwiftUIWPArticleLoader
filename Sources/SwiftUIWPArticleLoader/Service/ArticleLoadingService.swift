@@ -13,10 +13,6 @@ struct ArticleLoadingService {
     func fetchArticles(url: URL) -> AnyPublisher<[Article], Error> {
         Deferred {
             Future<[Article], Error> { promise in
-                guard let url = URL(string: "https://clickbaitml.de/wp-json/wp/v2/posts?_embed") else {
-                    promise(.failure(WPError.urlError))
-                    return
-                }
                 URLSession.shared.dataTask(with: url){ (data, _, _) in
                     guard let data = data else { return }
                     do {
