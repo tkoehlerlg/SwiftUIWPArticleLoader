@@ -4,7 +4,7 @@
 
     final class SwiftUIWPArticleLoaderTests: XCTestCase {
         private var cancellables: Set<AnyCancellable> = []
-        let loader = WPArticleLoader(websiteAdress: "https://eierml.ml-projects.de")
+        let loader = WPArticleLoader(websiteAdress: URL(staticString: "https://eierml.ml-projects.de"))
 
         func testExample() {
             loader.fetchArticles()

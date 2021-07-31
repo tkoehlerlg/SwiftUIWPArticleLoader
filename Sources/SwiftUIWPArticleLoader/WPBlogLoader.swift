@@ -10,34 +10,35 @@ import Foundation
 
 @available(macOS 10.15, *)
 struct WPArticleLoader {
-    private(set) var articleAdress: URL
-    private(set) var authorsAdress: URL
-    private(set) var tagsAdress: URL
+    private(set) var articleURL: URL
+    private(set) var authorsURL: URL
+    private(set) var tagsURL: URL
 
     //MARK: Services
     let articleLoader = ArticleLoadingService()
 
     /// for automatic crowling
-    init(websiteAdress: String) {
-        self.articleAdress = URL(staticString: websiteAdress+"/wp-json/wp/v2/posts?_embed")
-        self.authorsAdress = URL(staticString: websiteAdress+"/wp-json/wp/v2/categories")
-        self.tagsAdress = URL(staticString: websiteAdress) //TODO: find adress
+    init(websiteAdress: URL) {
+        (articleURL, authorsURL, tagsURL) = (websiteAdress, websiteAdress, websiteAdress)
+        articleURL.appendPathComponent("/wp-json/wp/v2/posts?_embed")
+        authorsURL.appendPathComponent("/wp-json/wp/v2/categories")
+        tagsURL.appendPathComponent("/wp-json/wp/v2/tags")
     }
 
     /// for own costumazation
     init(
-        articleAdress: String,
-        authorsAdress: String,
-        tagsAdress: String
+        articleURL: URL,
+        authorsURL: URL,
+        tagsURL: URL
     ) {
-        self.articleAdress = URL(staticString: articleAdress)
-        self.authorsAdress = URL(staticString: authorsAdress)
-        self.tagsAdress = URL(staticString: tagsAdress)
+        self.articleURL = articleURL
+        self.authorsURL = authorsURL
+        self.tagsURL = tagsURL
     }
 
     func fetchArticles() -> AnyPublisher<[Article], Error> {
-        articleLoader.fetchArticles(url: articleAdress)
-        
+        articleLoader.fetchArticles(url: articleURL)
+
     }
 
 //    func fetchCategories() {

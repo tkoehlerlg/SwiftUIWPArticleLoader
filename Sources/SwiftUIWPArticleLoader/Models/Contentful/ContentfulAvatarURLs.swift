@@ -1,5 +1,5 @@
 //
-//  ContentfulAvatar.swift
+//  ContentfulAvatarURLs.swift
 //  
 //
 //  Created by Torben Köhler on 30.07.21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AvatarURLs: Decodable {
+class ContentfulAvatarURLs: Decodable {
     /// 24
     let small: URL
     /// 48
@@ -21,7 +21,7 @@ struct AvatarURLs: Decodable {
         case hight = "96"
     }
 
-    init(from decoder: Decoder) throws {
+    required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         small = try container.decode(URL.self, forKey: .small)
         medium = try container.decode(URL.self, forKey: .medium)
