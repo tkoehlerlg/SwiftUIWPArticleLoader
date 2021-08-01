@@ -13,7 +13,7 @@ extension Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
-        if let date = dateFormatter.date(from: dateString) {
+        if let date = dateFormatter.date(from: wpFormatString) {
             self = date
         } else {
             return nil
