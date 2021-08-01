@@ -26,7 +26,8 @@ class ContentfulTag: Tag, Decodable {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let id = try container.decode(Int.self, forKey: .id)
-        let description = try? container.decode(String.self, forKey: .description)
+        var description: String? = nil
+        description = try? container.decode(String.self, forKey: .description)
         let link = try container.decode(URL.self, forKey: .link)
         let name = try container.decode(String.self, forKey: .name)
         let slug = try container.decode(String.self, forKey: .slug)
