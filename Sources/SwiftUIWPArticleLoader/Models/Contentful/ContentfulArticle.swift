@@ -93,7 +93,7 @@ struct ContentfulArticle: Decodable, Identifiable {
         slug = try container.decode(String.self, forKey: .slug)
         status = try container.decode(PublishStatus.self, forKey: .status)
         type = try container.decode(String.self, forKey: .type)
-        title = try container.decode(Content.self, forKey: .content)
+        title = try container.decode(Content.self, forKey: .title)
         format = try container.decode(Format.self, forKey: .format)
         commentStatus = try container.decode(FeatureStatus.self, forKey: .commentStatus)
         pingStatus = try container.decode(FeatureStatus.self, forKey: .pingStatus)
