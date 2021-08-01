@@ -16,7 +16,7 @@ struct ArticleLoadingService {
                 URLSession.shared.dataTask(with: url){ (data, _, _) in
                     guard let data = data else { return }
                     let decoder = JSONDecoder()
-                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+//                    decoder.keyDecodingStrategy = .convertFromSnakeCase
                     do {
                         let articles = try decoder.decode([ContentfulArticle].self, from: data)
                         promise(.success(articles.map({ Article(from: $0) })))
