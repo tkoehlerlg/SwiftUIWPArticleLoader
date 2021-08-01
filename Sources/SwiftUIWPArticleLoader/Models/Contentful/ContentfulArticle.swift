@@ -70,7 +70,7 @@ struct ContentfulArticle: Decodable, Identifiable {
     }
     // MARK: Decodable
     enum CodingKeys: String, CodingKey {
-        case dateGMT = "date_gmt"
+        case dateGMT = "dategmt"
         case modifiedGMT = "modified_gmt"
         case commentStatus = "comment_status"
         case pingStatus = "ping_status"
