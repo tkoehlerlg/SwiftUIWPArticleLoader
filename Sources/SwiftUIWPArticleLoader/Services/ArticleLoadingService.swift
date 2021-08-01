@@ -10,15 +10,11 @@ import Foundation
 
 @available(macOS 10.15, *)
 struct ArticleLoadingService {
-    func fetchArticles(url: URL) -> AnyPublisher<[Article], Error> {
+    func fetchArticles(urlRequest: URLRequest) -> AnyPublisher<[Article], Error> {
         Deferred {
             Future<[Article], Error> { promise in
-                URLSession.shared.dataTask(with: url){ (data, _, _) in
+                URLSession.shared.dataTask(with: urlRequest){ (data, _, _) in
                     guard let data = data else { return }
-
-                    let convertedString = String(data: data, encoding: String.Encoding.utf8)
-                    print(convertedString)
-
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .useDefaultKeys
                     do {

@@ -19,7 +19,7 @@ public struct WPArticleLoader {
     // MARK: init
     public init(websiteAdress: URL) {
         (articleURL, authorsURL, tagsURL) = (websiteAdress, websiteAdress, websiteAdress)
-        articleURL.appendPathComponent("/wp-json/wp/v2/posts?_embed")
+        articleURL.appendPathComponent("/wp-json/wp/v2/posts")
         authorsURL.appendPathComponent("/wp-json/wp/v2/categories")
         tagsURL.appendPathComponent("/wp-json/wp/v2/tags")
     }
@@ -35,7 +35,12 @@ public struct WPArticleLoader {
     }
     // MARK: fetch Data
     public func fetchArticles() -> AnyPublisher<[Article], Error> {
-        articleLoader.fetchArticles(url: articleURL)
+        var components = URLComponents(string: articleURL.absoluteString)!
+        components.queryItems = [
+            URLQueryItem(name: "_embed", value: nil)
+        ]
+        let request = URLRequest(url: components.url!)
+        return articleLoader.fetchArticles(urlRequest: request)
     }
 
 //    func fetchCategories() {
