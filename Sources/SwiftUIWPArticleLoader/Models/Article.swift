@@ -102,5 +102,5 @@ public struct Article: Identifiable {
         categories = [.mockCategory]
         tags = [.mockTag]
     }
-    static var mock: Self = .init()
+    public static var mock: Self = .init()
 }

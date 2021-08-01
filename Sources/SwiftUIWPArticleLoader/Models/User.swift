@@ -50,5 +50,5 @@ public class User: Identifiable {
         )
         #endif
     }
-    static var mock: User = .init()
+    public static var mock: User = .init()
 }
