@@ -13,9 +13,9 @@ public class User: Identifiable {
     /// Display name for the user.
     public let name: String
     /// URL of the user.
-    public let url: URL
+    public let url: URL?
     /// Description of the user.
-    public let description: String
+    public let description: String?
     /// Author URL of the user.
     public let link: URL
     /// An alphanumeric identifier for the user.
