@@ -10,7 +10,6 @@ import Foundation
 class ContentfulTerm: Term, Decodable {
     /// What Type the Term is.
     let type: TermType
-
     enum TermType: String, Codable {
         case category
         case tag = "post_tag"
@@ -18,12 +17,12 @@ class ContentfulTerm: Term, Decodable {
         case linkCategory = "link_category"
         case postFormat = "post_format"
     }
-
+    // MARK: CodingKeys
     enum CodingKeys: String, CodingKey {
         case type = "taxonomy"
         case id, description, link, name, slug
     }
-
+    // MARK: init
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let id = try container.decode(String.self, forKey: .id)

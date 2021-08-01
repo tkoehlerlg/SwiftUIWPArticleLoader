@@ -29,7 +29,6 @@ struct Article: Identifiable {
     let title: String
     /// The format for the article.
     let format: Format
-
     // MARK: Settings
     /// Whether or not comments are open on the article.
     let commentStatus: FeatureStatus
@@ -43,13 +42,11 @@ struct Article: Identifiable {
     let excerpt: Content
     /// The featured image for the article.
     let featuredImageLoader: ImageLoader?
-
-
     // MARK: EmbeddedData
     let author: User
     let categories: [Term]
     let tags: [Term]
-
+    //MARK: init
     @available(macOS 10.12, *)
     init(from contentful: ContentfulArticle) {
         id = contentful.id

@@ -34,7 +34,6 @@ struct ContentfulArticle: Decodable, Identifiable {
     let title: Content
     /// The format for the object.
     let format: Format
-
     // MARK: Settings
     /// Whether or not comments are open on the object.
     let commentStatus: FeatureStatus
@@ -48,12 +47,9 @@ struct ContentfulArticle: Decodable, Identifiable {
     let excerpt: Content
     /// The ID of the featured media for the object.
     let featuredMediaID: Int
-
-
     // MARK: EmbeddedData
     /// Other Data that is embedded
     let embeddedData: EmbeddedData
-
     struct EmbeddedData: Decodable {
         let author: ContentfulUser
         let featuredMedia: [ContentfulMedia]
@@ -72,7 +68,6 @@ struct ContentfulArticle: Decodable, Identifiable {
             featuredMedia = try container.decode([ContentfulMedia].self, forKey: .featuredMedia)
         }
     }
-
     // MARK: Decodable
     enum CodingKeys: String, CodingKey {
         case dateGMT = "date_gmt"
@@ -83,7 +78,7 @@ struct ContentfulArticle: Decodable, Identifiable {
         case featuredMediaID = "featured_media"
         case id, date, guid, link, modified, slug, status, type, title, format, content, excerpt
     }
-
+    // MARK: init
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(Int.self, forKey: .id)

@@ -45,7 +45,7 @@ struct ContentfulMedia: Codable {
     let mimeType: String
     /// URL to the original attachment file.
     let sourceURL: URL
-
+    // MARK: CodingKeys
     enum CodingKeys: String, CodingKey {
         case dateGMT = "date_gmt"
         case modifiedGMT = "modified_gmt"

@@ -18,7 +18,7 @@ class Term: Identifiable {
     let name: String
     /// An alphanumeric identifier for the term unique to its type.
     let slug: String
-
+    // MARK: init
     init(
         id: String,
         description: String?,

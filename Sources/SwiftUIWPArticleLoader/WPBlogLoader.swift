@@ -8,24 +8,21 @@
 import Combine
 import Foundation
 
-@available(macOS 10.15, *)
 struct WPArticleLoader {
+    // MARK: URLs
     private(set) var articleURL: URL
     private(set) var authorsURL: URL
     private(set) var tagsURL: URL
-
     //MARK: Services
     let articleLoader = ArticleLoadingService()
-
-    /// for automatic crowling
+    // MARK: init
     init(websiteAdress: URL) {
         (articleURL, authorsURL, tagsURL) = (websiteAdress, websiteAdress, websiteAdress)
         articleURL.appendPathComponent("/wp-json/wp/v2/posts?_embed")
         authorsURL.appendPathComponent("/wp-json/wp/v2/categories")
         tagsURL.appendPathComponent("/wp-json/wp/v2/tags")
     }
-
-    /// for own costumazation
+    // customized init
     init(
         articleURL: URL,
         authorsURL: URL,
@@ -35,10 +32,10 @@ struct WPArticleLoader {
         self.authorsURL = authorsURL
         self.tagsURL = tagsURL
     }
-
+    // MARK: fetch Data
+    @available(macOS 10.15, *)
     func fetchArticles() -> AnyPublisher<[Article], Error> {
         articleLoader.fetchArticles(url: articleURL)
-
     }
 
 //    func fetchCategories() {

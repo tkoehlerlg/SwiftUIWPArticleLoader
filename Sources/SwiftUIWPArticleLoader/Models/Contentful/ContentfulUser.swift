@@ -22,11 +22,12 @@ class ContentfulUser: Decodable {
     let slug: String
     /// Avatar URLs for the user.
     let avatarURLs: ContentfulAvatarURLs
-
+    //MARK: CodingKeys
     enum CodingKeys: String, CodingKey {
         case avatarURLs = "avatar_urls"
         case id, name, url, description, link, slug
     }
+    // MARK: init
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(Int.self, forKey: .id)

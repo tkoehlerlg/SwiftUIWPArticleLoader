@@ -22,7 +22,7 @@ class User: Identifiable {
     let slug: String
     /// Avatar Image for the user.
     let profileImageLoader: ImageLoader?
-
+    // MARK: init
     init(from contentful: ContentfulUser) {
         id = contentful.id
         name = contentful.name
