@@ -24,7 +24,7 @@ class ContentfulUser: Decodable {
     let avatarURLs: ContentfulAvatarURLs
     //MARK: CodingKeys
     enum CodingKeys: String, CodingKey {
-        case avatarURLs = "avatarUrls"
+        case avatarURLs = "avatar_urls"
         case id, name, url, description, link, slug
     }
     // MARK: init

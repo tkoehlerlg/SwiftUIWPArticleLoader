@@ -36,8 +36,10 @@ struct ContentfulMedia: Decodable {
     // MARK: CodingKeys
     enum CodingKeys: String, CodingKey {
         case authorID = "author"
-        case sourceURL = "sourceUrl"
-        case id, date, link, slug, type, title, description, mediaType, mimeType
+        case sourceURL = "source_url"
+        case mediaType = "media_type"
+        case mimeType = "mime_type"
+        case id, date, link, slug, type, title, description
     }
     // MARK: init
     init(from decoder: Decoder) throws {
