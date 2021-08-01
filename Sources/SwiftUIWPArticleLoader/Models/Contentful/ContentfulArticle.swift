@@ -64,7 +64,7 @@ struct ContentfulArticle: Decodable, Identifiable {
         init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
             author = try container.decode([ContentfulUser].self, forKey: .author).first!
-            terms = try container.decode([ContentfulTerm].self, forKey: .terms)
+            terms = Array(try container.decode([[ContentfulTerm]].self, forKey: .terms).joined())
             featuredMedia = try container.decode([ContentfulMedia].self, forKey: .featuredMedia)
         }
     }
