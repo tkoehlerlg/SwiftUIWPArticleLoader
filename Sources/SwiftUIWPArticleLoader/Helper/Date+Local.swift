@@ -14,7 +14,7 @@ extension Date {
         return Date(timeInterval: seconds, since: self)
     }
 
-    func gmtToLocal() -> Date? {
+    func gmtToLocal() -> Date {
         let timezoneOffset = TimeZone.current.secondsFromGMT()
         let epochDate = self.timeIntervalSince1970
         let timezoneEpochOffset = (epochDate + Double(timezoneOffset))
