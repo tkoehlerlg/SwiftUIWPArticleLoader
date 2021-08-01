@@ -14,7 +14,7 @@ public struct Article: Identifiable {
     ///The date the article was published, in your timezone.
     public let date: Date?
     /// The globally unique identifier for the article.
-    public let guid: Content
+    public let guid: String
     /// URL to the article.
     public let link: URL
     /// The date the article was last modified, in the your timezone.
@@ -36,9 +36,9 @@ public struct Article: Identifiable {
     public let pingStatus: FeatureStatus
     // MARK: Content
     /// The content for the article.
-    public let content: Content
+    public let content: String
     /// The excerpt for the article.
-    public let excerpt: Content
+    public let excerpt: String
     #if !os(macOS)
     /// The featured image for the article.
     public let featuredImageLoader: ImageLoader?
@@ -52,7 +52,7 @@ public struct Article: Identifiable {
     init(from contentful: ContentfulArticle) {
         id = contentful.id
         date = contentful.date?.gmtToLocal()
-        guid = contentful.guid
+        guid = contentful.guid.rendered
         link = contentful.link
         modified = contentful.modified?.gmtToLocal()
         slug = contentful.slug
@@ -62,8 +62,8 @@ public struct Article: Identifiable {
         format = contentful.format
         commentStatus = contentful.commentStatus
         pingStatus = contentful.pingStatus
-        content = contentful.content
-        excerpt = contentful.excerpt
+        content = contentful.content.rendered
+        excerpt = contentful.excerpt.rendered
         author = User(from: contentful.embeddedData.author)
         #if !os(macOS)
         if let link = contentful.embeddedData.featuredMedia.first(where: {
@@ -77,4 +77,30 @@ public struct Article: Identifiable {
         categories = contentful.embeddedData.terms.compactMap({ return $0.type == .category ? $0 : nil })
         tags = contentful.embeddedData.terms.compactMap({ return $0.type == .postTag ? $0 : nil })
     }
+    // MARK: mock
+    private init() {
+        id = 0
+        date = Date()
+        guid = "guid"
+        link = URL(staticString: "https://wordpress.org")
+        modified = Date()
+        slug = "slug"
+        status = .publish
+        type = "post"
+        title = "Title"
+        format = .standard
+        commentStatus = .closed
+        pingStatus = .closed
+        content = "<p>Content</p>"
+        excerpt = "<p>Cont...</p>"
+        author = .mock
+        #if !os(macOS)
+        featuredImageLoader = ImageLoader(
+            url: URL(staticString: "https://s.w.org/images/home/swag_col-1.jpg?1")
+        )
+        #endif
+        categories = [.mockCategory]
+        tags = [.mockTag]
+    }
+    static var mock: Self = .init()
 }

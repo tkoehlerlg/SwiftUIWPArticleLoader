@@ -36,4 +36,19 @@ public class User: Identifiable {
         profileImageLoader = ImageLoader(url: contentful.avatarURLs.high)
         #endif
     }
+    //MARK: mock
+    private init() {
+        id = 0
+        name = "Torben Köhler"
+        url = URL(staticString: "https://ml-projects.de/")
+        description = "Developer"
+        link = URL(staticString: "https://ml-projects.de/ueber-uns/")
+        slug = "torben"
+        #if !os(macOS)
+        profileImageLoader = ImageLoader(
+            url: URL(staticString: "https://salz-app.de/wp-content/uploads/2021/03/IMG_4559-scaled.jpeg")
+        )
+        #endif
+    }
+    static var mock: User = .init()
 }

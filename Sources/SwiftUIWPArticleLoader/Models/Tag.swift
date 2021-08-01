@@ -32,4 +32,19 @@ public class Tag: Identifiable {
         self.name = name
         self.slug = slug
     }
+    //MARK: mock
+    static var mockCategory: Tag = .init(
+        id: 0,
+        description: "A Category.",
+        link: URL(staticString: "https://ml-projects.de/blog/"),
+        name: "Category",
+        slug: "category"
+    )
+    static var mockTag: Tag = .init(
+        id: 0,
+        description: "A Tag.",
+        link: URL(staticString: "https://ml-projects.de/blog/"),
+        name: "Tag",
+        slug: "tag"
+    )
 }
