@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-struct WPArticleLoader {
+public struct WPArticleLoader {
     // MARK: URLs
     private(set) var articleURL: URL
     private(set) var authorsURL: URL
