@@ -10,8 +10,6 @@ import Foundation
 public class Tag: Identifiable {
     /// Unique identifier for the term.
     public let id: Int
-    /// HTML description of the term.
-    public let description: String?
     /// URL of the term.
     public let link: URL
     /// HTML title for the term.
@@ -21,13 +19,11 @@ public class Tag: Identifiable {
     // MARK: init
     init(
         id: Int,
-        description: String?,
         link: URL,
         name: String,
         slug: String
     ) {
         self.id = id
-        self.description = description
         self.link = link
         self.name = name
         self.slug = slug
