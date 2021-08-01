@@ -11,11 +11,10 @@ class ContentfulTerm: Term, Decodable {
     /// What Type the Term is.
     let type: TermType
     enum TermType: String, Codable {
-        case category
-        case tag = "post_tag"
-        case navMenu = "nav_menu"
-        case linkCategory = "link_category"
-        case postFormat = "post_format"
+        case navMenu = "navMenu"
+        case linkCategory = "linkCategory"
+        case postFormat = "postFormat"
+        case category, postTag
     }
     // MARK: CodingKeys
     enum CodingKeys: String, CodingKey {

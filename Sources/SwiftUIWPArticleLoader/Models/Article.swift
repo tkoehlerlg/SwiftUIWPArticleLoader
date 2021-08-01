@@ -75,6 +75,6 @@ public struct Article: Identifiable {
         }
         #endif
         categories = contentful.embeddedData.terms.compactMap({ return $0.type == .category ? $0 : nil })
-        tags = contentful.embeddedData.terms.compactMap({ return $0.type == .tag ? $0 : nil })
+        tags = contentful.embeddedData.terms.compactMap({ return $0.type == .postTag ? $0 : nil })
     }
 }

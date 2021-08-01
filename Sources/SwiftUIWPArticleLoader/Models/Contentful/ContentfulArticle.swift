@@ -70,12 +70,12 @@ struct ContentfulArticle: Decodable, Identifiable {
     }
     // MARK: Decodable
     enum CodingKeys: String, CodingKey {
-        case dateGMT = "date_gmt"
-        case modifiedGMT = "modified_gmt"
-        case commentStatus = "comment_status"
-        case pingStatus = "ping_status"
-        case embeddedData = "_embedded"
-        case featuredMediaID = "featured_media"
+        case dateGMT = "dateGmt"
+        case modifiedGMT = "modifiedGmt"
+        case commentStatus = "commentStatus"
+        case pingStatus = "pingStatus"
+        case embeddedData = "embedded"
+        case featuredMediaID = "featuredMedia"
         case id, date, guid, link, modified, slug, status, type, title, format, content, excerpt
     }
     // MARK: init
