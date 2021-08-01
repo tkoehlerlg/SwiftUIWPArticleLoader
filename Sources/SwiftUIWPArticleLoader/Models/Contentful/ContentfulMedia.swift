@@ -7,33 +7,21 @@
 
 import Foundation
 
-struct ContentfulMedia: Codable {
+struct ContentfulMedia: Decodable {
     /// Unique identifier for the object.
     let id: Int
     /// The date the object was published, in the site's timezone.
     let date: String
-    /// The date the object was published, as GMT.
-    let dateGMT: String
     /// URL to the object.
     let link: URL
-    /// The date the object was last modified, in the site's timezone.
-    let modified: Date
-    /// The date the object was last modified, as GMT.
-    let modifiedGMT: Date
     /// An alphanumeric identifier for the object unique to its type.
     let slug: String
-    /// Status for the object.
-    let status: PublishStatus
     /// Type of Post for the object.
     let type: String
     /// The title for the object.
     let title: Content
     /// The ID for the author of the object.
-    let author: Int
-    /// Whether or not comments are open on the object.
-    let commentStatus: FeatureStatus
-    /// Whether or not the object can be pinged.
-    let pingStatus: FeatureStatus
+    let authorID: Int
     /// The attachment description.
     let description: Content
     /// Attachment type.
@@ -47,13 +35,29 @@ struct ContentfulMedia: Codable {
     let sourceURL: URL
     // MARK: CodingKeys
     enum CodingKeys: String, CodingKey {
-        case dateGMT = "dategmt"
-        case modifiedGMT = "modifiedgmt"
-        case commentStatus = "commentstatus"
-        case pingStatus = "pingstatus"
-        case mediaType = "mediatype"
-        case mimeType = "mimetype"
-        case sourceURL = "sourceurl"
-        case id, date, link, modified, slug, status, type, title, author, description
+        case dateGMT = "date_gmt"
+        case modifiedGMT = "modified_gmt"
+        case commentStatus = "comment_status"
+        case pingStatus = "ping_status"
+        case mediaType = "media_type"
+        case mimeType = "mime_type"
+        case sourceURL = "source_url"
+        case authorID = "author"
+        case id, date, link, modified, slug, status, type, title, description
+    }
+    // MARK: init
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(Int.self, forKey: .id)
+        date = try container.decode(String.self, forKey: .date)
+        link = try container.decode(URL.self, forKey: .link)
+        slug = try container.decode(String.self, forKey: .slug)
+        type = try container.decode(String.self, forKey: .type)
+        title = try container.decode(Content.self, forKey: .title)
+        authorID = try container.decode(Int.self, forKey: .authorID)
+        description = try container.decode(Content.self, forKey: .description)
+        mediaType = try container.decode(MediaType.self, forKey: .mediaType)
+        mimeType = try container.decode(String.self, forKey: .mimeType)
+        sourceURL = try container.decode(URL.self, forKey: .sourceURL)
     }
 }
