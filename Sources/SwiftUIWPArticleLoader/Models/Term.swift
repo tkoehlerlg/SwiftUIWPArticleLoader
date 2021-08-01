@@ -9,15 +9,15 @@ import Foundation
 
 class Term: Identifiable {
     /// Unique identifier for the term.
-    let id: String
+    public let id: String
     /// HTML description of the term.
-    let description: String?
+    public let description: String?
     /// URL of the term.
-    let link: URL
+    public let link: URL
     /// HTML title for the term.
-    let name: String
+    public let name: String
     /// An alphanumeric identifier for the term unique to its type.
-    let slug: String
+    public let slug: String
     // MARK: init
     init(
         id: String,

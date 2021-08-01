@@ -8,5 +8,5 @@
 import Foundation
 
 enum PublishStatus: String, Codable {
-    case publish, future, draft, pending, `private`
+    public case publish, future, draft, pending, `private`
 }

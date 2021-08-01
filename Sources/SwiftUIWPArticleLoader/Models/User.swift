@@ -9,19 +9,19 @@ import Foundation
 
 class User: Identifiable {
     /// Unique identifier for the user.
-    let id: Int
+    public let id: Int
     /// Display name for the user.
-    let name: String
+    public let name: String
     /// URL of the user.
-    let url: URL
+    public let url: URL
     /// Description of the user.
-    let description: String
+    public let description: String
     /// Author URL of the user.
-    let link: URL
+    public let link: URL
     /// An alphanumeric identifier for the user.
-    let slug: String
+    public let slug: String
     /// Avatar Image for the user.
-    let profileImageLoader: ImageLoader?
+    public let profileImageLoader: ImageLoader?
     // MARK: init
     init(from contentful: ContentfulUser) {
         id = contentful.id

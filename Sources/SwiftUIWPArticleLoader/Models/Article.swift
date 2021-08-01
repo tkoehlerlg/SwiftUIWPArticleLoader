@@ -12,40 +12,39 @@ public struct Article: Identifiable {
     /// Unique identifier for the article.
     public let id: Int
     ///The date the article was published, in your timezone.
-    let date: Date?
+    public let date: Date?
     /// The globally unique identifier for the article.
-    let guid: Content
+    public let guid: Content
     /// URL to the article.
-    let link: URL
+    public let link: URL
     /// The date the article was last modified, in the your timezone.
-    let modified: Date?
+    public let modified: Date?
     /// An alphanumeric identifier for the article unique to its type.
-    let slug: String
+    public let slug: String
     /// Status for the article.
-    let status: PublishStatus
+    public let status: PublishStatus
     /// Type of Post for the article.
-    let type: String
+    public let type: String
     /// The title for the article.
-    let title: String
+    public let title: String
     /// The format for the article.
-    let format: Format
+    public let format: Format
     // MARK: Settings
     /// Whether or not comments are open on the article.
-    let commentStatus: FeatureStatus
+    public let commentStatus: FeatureStatus
     /// Whether or not the article can be pinged.
-    let pingStatus: FeatureStatus
-
+    public let pingStatus: FeatureStatus
     // MARK: Content
     /// The content for the article.
-    let content: Content
+    public let content: Content
     /// The excerpt for the article.
-    let excerpt: Content
+    public let excerpt: Content
     /// The featured image for the article.
-    let featuredImageLoader: ImageLoader?
+    public let featuredImageLoader: ImageLoader?
     // MARK: EmbeddedData
-    let author: User
-    let categories: [Term]
-    let tags: [Term]
+    public let author: User
+    public let categories: [Term]
+    public let tags: [Term]
     //MARK: init
     @available(macOS 10.12, *)
     init(from contentful: ContentfulArticle) {

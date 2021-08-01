@@ -9,7 +9,7 @@ import Foundation
 
 enum WPError: Error {
     /// Throw when an invalid url is entered
-    case urlError
+    public case urlError
     /// Throw when an url resource is not found
-    case resourceNotFound
+    public case resourceNotFound
 }

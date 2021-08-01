@@ -8,5 +8,5 @@
 import Foundation
 
 enum FeatureStatus: String, Codable {
-    case open, closed
+    public case open, closed
 }
