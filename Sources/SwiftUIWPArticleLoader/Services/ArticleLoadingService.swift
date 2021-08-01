@@ -15,10 +15,8 @@ struct ArticleLoadingService {
             Future<[Article], Error> { promise in
                 URLSession.shared.dataTask(with: urlRequest){ (data, _, _) in
                     guard let data = data else { return }
-                    let decoder = JSONDecoder()
-                    decoder.keyDecodingStrategy = .useDefaultKeys
                     do {
-                        let articles = try decoder.decode([ContentfulArticle].self, from: data)
+                        let articles = try JSONDecoder().decode([ContentfulArticle].self, from: data)
                         promise(.success(articles.map({ Article(from: $0) })))
                     } catch {
                         promise(.failure(error))
