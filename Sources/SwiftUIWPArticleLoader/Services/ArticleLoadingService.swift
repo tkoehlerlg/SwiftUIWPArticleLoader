@@ -16,13 +16,8 @@ struct ArticleLoadingService {
                 URLSession.shared.dataTask(with: url){ (data, _, _) in
                     guard let data = data else { return }
 
-                    do {
-                        let serie =  try JSONSerialization.data(withJSONObject: data, options: JSONSerialization.WritingOptions.prettyPrinted)
-                        let convertedString = String(data: serie, encoding: String.Encoding.utf8)
-                        print(convertedString)
-                    } catch let myJSONError {
-                        print(myJSONError)
-                    }
+                    let convertedString = String(data: data, encoding: String.Encoding.utf8)
+                    print(convertedString)
 
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .useDefaultKeys
