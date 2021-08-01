@@ -66,16 +66,18 @@ public struct Article: Identifiable {
         excerpt = contentful.excerpt.rendered
         author = User(from: contentful.embeddedData.author)
         #if !os(macOS)
-        if let link = contentful.embeddedData.featuredMedia.first(where: {
-            $0.id == contentful.featuredMediaID
-        })?.link {
-            featuredImageLoader = ImageLoader(url: link)
-        } else {
-            featuredImageLoader = nil
-        }
+        if let featuredMedia = contentful.embeddedData.featuredMedia {
+            if let link = featuredMedia.first(where: {
+                $0.id == contentful.featuredMediaID
+            })?.link {
+                featuredImageLoader = ImageLoader(url: link)
+            } else { featuredImageLoader = nil }
+        } else { featuredImageLoader = nil }
         #endif
-        categories = contentful.embeddedData.terms.compactMap({ return $0.type == .category ? $0 : nil })
-        tags = contentful.embeddedData.terms.compactMap({ return $0.type == .postTag ? $0 : nil })
+        if let terms = contentful.embeddedData.terms {
+            categories = terms.compactMap({ return $0.type == .category ? $0 : nil })
+            tags = terms.compactMap({ return $0.type == .postTag ? $0 : nil })
+        } else { (categories, tags) = ([], []) }
     }
     // MARK: mock
     private init() {

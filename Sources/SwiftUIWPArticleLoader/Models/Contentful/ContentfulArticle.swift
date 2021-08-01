@@ -52,20 +52,22 @@ struct ContentfulArticle: Decodable, Identifiable {
     let embeddedData: EmbeddedData
     struct EmbeddedData: Decodable {
         let author: ContentfulUser
-        let featuredMedia: [ContentfulMedia]
-        let terms: [ContentfulTag]
+        let featuredMedia: [ContentfulMedia]?
+        let terms: [ContentfulTag]?
 
         enum CodingKeys: String, CodingKey {
+            case author
             case featuredMedia = "wp:featuredmedia"
             case terms = "wp:term"
-            case author
         }
 
         init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
             author = try container.decode([ContentfulUser].self, forKey: .author).first!
-            terms = Array(try container.decode([[ContentfulTag]].self, forKey: .terms).joined())
-            featuredMedia = try container.decode([ContentfulMedia].self, forKey: .featuredMedia)
+            featuredMedia = try? container.decode([ContentfulMedia].self, forKey: .featuredMedia)
+            if let termsFetch = try? container.decode([[ContentfulTag]].self, forKey: .terms) {
+                terms = Array(termsFetch.joined())
+            } else { terms = nil }
         }
     }
     // MARK: Decodable
