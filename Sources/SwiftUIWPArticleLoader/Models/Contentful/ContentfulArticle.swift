@@ -74,7 +74,7 @@ struct ContentfulArticle: Decodable, Identifiable {
         case modifiedGMT = "modifiedGmt"
         case commentStatus = "commentStatus"
         case pingStatus = "pingStatus"
-        case embeddedData = "Embedded"
+        case embeddedData = "embedded"
         case featuredMediaID = "featuredMedia"
         case id, date, guid, link, modified, slug, status, type, title, format, content, excerpt
     }
