@@ -16,14 +16,14 @@ public struct WPArticleLoader {
     //MARK: Services
     let articleLoader = ArticleLoadingService()
     // MARK: init
-    init(websiteAdress: URL) {
+    public init(websiteAdress: URL) {
         (articleURL, authorsURL, tagsURL) = (websiteAdress, websiteAdress, websiteAdress)
         articleURL.appendPathComponent("/wp-json/wp/v2/posts?_embed")
         authorsURL.appendPathComponent("/wp-json/wp/v2/categories")
         tagsURL.appendPathComponent("/wp-json/wp/v2/tags")
     }
     // customized init
-    init(
+    public init(
         articleURL: URL,
         authorsURL: URL,
         tagsURL: URL
@@ -34,7 +34,7 @@ public struct WPArticleLoader {
     }
     // MARK: fetch Data
     @available(macOS 10.15, *)
-    func fetchArticles() -> AnyPublisher<[Article], Error> {
+    public func fetchArticles() -> AnyPublisher<[Article], Error> {
         articleLoader.fetchArticles(url: articleURL)
     }
 

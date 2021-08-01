@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct Article: Identifiable {
+public struct Article: Identifiable {
     // MARK: Top Data
     /// Unique identifier for the article.
-    let id: Int
+    public let id: Int
     ///The date the article was published, in your timezone.
     let date: Date?
     /// The globally unique identifier for the article.
