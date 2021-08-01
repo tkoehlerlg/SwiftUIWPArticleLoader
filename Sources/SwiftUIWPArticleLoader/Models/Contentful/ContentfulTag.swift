@@ -20,7 +20,7 @@ class ContentfulTag: Tag, Decodable {
     // MARK: CodingKeys
     enum CodingKeys: String, CodingKey {
         case type = "taxonomy"
-        case id, description, link, name, slug
+        case id, link, name, slug
     }
     // MARK: init
     required init(from decoder: Decoder) throws {
