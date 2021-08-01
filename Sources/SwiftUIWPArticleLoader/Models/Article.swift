@@ -45,8 +45,8 @@ public struct Article: Identifiable {
     #endif
     // MARK: EmbeddedData
     public let author: User
-    public let categories: [Term]
-    public let tags: [Term]
+    public let categories: [Tag]
+    public let tags: [Tag]
     //MARK: init
     @available(macOS 10.12, *)
     init(from contentful: ContentfulArticle) {

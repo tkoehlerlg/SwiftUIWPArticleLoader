@@ -53,7 +53,7 @@ struct ContentfulArticle: Decodable, Identifiable {
     struct EmbeddedData: Decodable {
         let author: ContentfulUser
         let featuredMedia: [ContentfulMedia]
-        let terms: [ContentfulTerm]
+        let terms: [ContentfulTag]
 
         enum CodingKeys: String, CodingKey {
             case featuredMedia = "wp:featuredmedia"
@@ -64,7 +64,7 @@ struct ContentfulArticle: Decodable, Identifiable {
         init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
             author = try container.decode([ContentfulUser].self, forKey: .author).first!
-            terms = Array(try container.decode([[ContentfulTerm]].self, forKey: .terms).joined())
+            terms = Array(try container.decode([[ContentfulTag]].self, forKey: .terms).joined())
             featuredMedia = try container.decode([ContentfulMedia].self, forKey: .featuredMedia)
         }
     }

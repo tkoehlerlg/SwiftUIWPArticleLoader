@@ -1,5 +1,5 @@
 //
-//  ContentfulTerm.swift
+//  ContentfulTag.swift
 //  
 //
 //  Created by Torben Köhler on 31.07.21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ContentfulTerm: Term, Decodable {
+class ContentfulTag: Tag, Decodable {
     /// What Type the Term is.
     let type: TermType
     enum TermType: String, Codable {
@@ -25,7 +25,7 @@ class ContentfulTerm: Term, Decodable {
     // MARK: init
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        let id = try container.decode(String.self, forKey: .id)
+        let id = try container.decode(Int.self, forKey: .id)
         let description = try? container.decode(String.self, forKey: .description)
         let link = try container.decode(URL.self, forKey: .link)
         let name = try container.decode(String.self, forKey: .name)

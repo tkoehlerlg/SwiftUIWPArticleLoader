@@ -1,15 +1,15 @@
 //
-//  Category.swift
-//  clickbaitml-ios (iOS)
+//  Tag.swift
+//
 //
 //  Created by Torben Köhler on 30.06.21.
 //
 
 import Foundation
 
-public class Term: Identifiable {
+public class Tag: Identifiable {
     /// Unique identifier for the term.
-    public let id: String
+    public let id: Int
     /// HTML description of the term.
     public let description: String?
     /// URL of the term.
@@ -20,7 +20,7 @@ public class Term: Identifiable {
     public let slug: String
     // MARK: init
     init(
-        id: String,
+        id: Int,
         description: String?,
         link: URL,
         name: String,
