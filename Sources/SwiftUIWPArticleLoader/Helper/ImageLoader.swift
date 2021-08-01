@@ -6,6 +6,7 @@
 //
 
 import Combine
+#if !os(macOS)
 import UIKit
 
 public class ImageLoader: ObservableObject {
@@ -37,3 +38,4 @@ public class ImageLoader: ObservableObject {
         cancellable?.cancel()
     }
 }
+#endif

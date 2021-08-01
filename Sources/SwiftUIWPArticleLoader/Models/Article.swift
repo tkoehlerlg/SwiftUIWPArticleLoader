@@ -39,8 +39,10 @@ public struct Article: Identifiable {
     public let content: Content
     /// The excerpt for the article.
     public let excerpt: Content
+    #if !os(macOS)
     /// The featured image for the article.
     public let featuredImageLoader: ImageLoader?
+    #endif
     // MARK: EmbeddedData
     public let author: User
     public let categories: [Term]
@@ -63,6 +65,7 @@ public struct Article: Identifiable {
         content = contentful.content
         excerpt = contentful.excerpt
         author = User(from: contentful.embeddedData.author)
+        #if !os(macOS)
         if let link = contentful.embeddedData.featuredMedia.first(where: {
             $0.id == contentful.featuredMediaID
         })?.link {
@@ -70,6 +73,7 @@ public struct Article: Identifiable {
         } else {
             featuredImageLoader = nil
         }
+        #endif
         categories = contentful.embeddedData.terms.compactMap({ return $0.type == .category ? $0 : nil })
         tags = contentful.embeddedData.terms.compactMap({ return $0.type == .tag ? $0 : nil })
     }

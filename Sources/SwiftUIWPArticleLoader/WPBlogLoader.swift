@@ -8,6 +8,7 @@
 import Combine
 import Foundation
 
+@available(macOS 10.15, *)
 public struct WPArticleLoader {
     // MARK: URLs
     private(set) var articleURL: URL
@@ -33,7 +34,6 @@ public struct WPArticleLoader {
         self.tagsURL = tagsURL
     }
     // MARK: fetch Data
-    @available(macOS 10.15, *)
     public func fetchArticles() -> AnyPublisher<[Article], Error> {
         articleLoader.fetchArticles(url: articleURL)
     }

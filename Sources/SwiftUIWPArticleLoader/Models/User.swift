@@ -20,8 +20,10 @@ public class User: Identifiable {
     public let link: URL
     /// An alphanumeric identifier for the user.
     public let slug: String
+    #if !os(macOS)
     /// Avatar Image for the user.
     public let profileImageLoader: ImageLoader?
+    #endif
     // MARK: init
     init(from contentful: ContentfulUser) {
         id = contentful.id
@@ -30,6 +32,8 @@ public class User: Identifiable {
         description = contentful.description
         link = contentful.link
         slug = contentful.slug
+        #if !os(macOS)
         profileImageLoader = ImageLoader(url: contentful.avatarURLs.high)
+        #endif
     }
 }
