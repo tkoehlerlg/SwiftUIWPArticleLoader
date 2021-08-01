@@ -8,12 +8,13 @@
 import Combine
 import UIKit
 
-class ImageLoader: ObservableObject {
-    @Published var image: UIImage?
+public class ImageLoader: ObservableObject {
+    @Published public var image: UIImage?
     private let url: URL
 
-    init(url: URL) {
+    public init(url: URL) {
         self.url = url
+        load()
     }
 
     deinit {
@@ -22,7 +23,9 @@ class ImageLoader: ObservableObject {
 
     private var cancellable: AnyCancellable?
 
-    func load() {
+    public func reload() { load() }
+
+    private func load() {
         cancellable = URLSession.shared.dataTaskPublisher(for: url)
             .map { UIImage(data: $0.data) }
             .replaceError(with: nil)

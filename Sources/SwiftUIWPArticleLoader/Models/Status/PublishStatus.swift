@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum PublishStatus: String, Codable {
-    public case publish, future, draft, pending, `private`
+public enum PublishStatus: String, Codable {
+    case publish, future, draft, pending, `private`
 }

@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum Format: String, Codable {
-    public case standard, aside, chat, gallery, link, image, quote, status, video, audio
+public enum Format: String, Codable {
+    case standard, aside, chat, gallery, link, image, quote, status, video, audio
 }

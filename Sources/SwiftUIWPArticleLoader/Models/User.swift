@@ -7,7 +7,7 @@
 
 import Foundation
 
-class User: Identifiable {
+public class User: Identifiable {
     /// Unique identifier for the user.
     public let id: Int
     /// Display name for the user.

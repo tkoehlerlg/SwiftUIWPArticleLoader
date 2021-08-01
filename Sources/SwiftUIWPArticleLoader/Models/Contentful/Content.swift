@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Content: Codable {
-    let rendered: String
+public struct Content: Codable {
+    public let rendered: String
 }

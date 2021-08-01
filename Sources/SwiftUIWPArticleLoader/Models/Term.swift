@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Term: Identifiable {
+public class Term: Identifiable {
     /// Unique identifier for the term.
     public let id: String
     /// HTML description of the term.

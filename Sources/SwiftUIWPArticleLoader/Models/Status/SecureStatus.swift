@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum FeatureStatus: String, Codable {
-    public case open, closed
+public enum FeatureStatus: String, Codable {
+    case open, closed
 }
