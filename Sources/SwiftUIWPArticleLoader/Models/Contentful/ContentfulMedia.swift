@@ -23,7 +23,7 @@ struct ContentfulMedia: Decodable {
     /// The ID for the author of the object.
     let authorID: Int
     /// The attachment description.
-    let description: Content
+    let description: Content?
     /// Attachment type.
     let mediaType: MediaType
     enum MediaType: String, Codable {
@@ -51,7 +51,7 @@ struct ContentfulMedia: Decodable {
         type = try container.decode(String.self, forKey: .type)
         title = try container.decode(Content.self, forKey: .title)
         authorID = try container.decode(Int.self, forKey: .authorID)
-        description = try container.decode(Content.self, forKey: .description)
+        description = try? container.decode(Content.self, forKey: .description)
         mediaType = try container.decode(MediaType.self, forKey: .mediaType)
         mimeType = try container.decode(String.self, forKey: .mimeType)
         sourceURL = try container.decode(URL.self, forKey: .sourceURL)

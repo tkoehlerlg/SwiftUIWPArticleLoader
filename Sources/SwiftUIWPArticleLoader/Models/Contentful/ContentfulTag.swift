@@ -20,18 +20,20 @@ class ContentfulTag: Tag, Decodable {
     // MARK: CodingKeys
     enum CodingKeys: String, CodingKey {
         case type = "taxonomy"
-        case id, link, name, slug
+        case id, description, link, name, slug
     }
     // MARK: init
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let id = try container.decode(Int.self, forKey: .id)
+        let description = try? container.decode(String.self, forKey: .description)
         let link = try container.decode(URL.self, forKey: .link)
         let name = try container.decode(String.self, forKey: .name)
         let slug = try container.decode(String.self, forKey: .slug)
         type = try container.decode(TermType.self, forKey: .type)
         super.init(
             id: id,
+            description: description,
             link: link,
             name: name,
             slug: slug
