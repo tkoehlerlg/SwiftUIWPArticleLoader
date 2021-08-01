@@ -69,7 +69,7 @@ public struct Article: Identifiable {
         if let featuredMedia = contentful.embeddedData.featuredMedia {
             if let link = featuredMedia.first(where: {
                 $0.id == contentful.featuredMediaID
-            })?.link {
+            })?.sourceURL {
                 featuredImageLoader = ImageLoader(url: link)
             } else { featuredImageLoader = nil }
         } else { featuredImageLoader = nil }
