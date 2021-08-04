@@ -51,10 +51,10 @@ public struct Article: Identifiable {
     @available(macOS 10.12, *)
     init(from contentful: ContentfulArticle) {
         id = contentful.id
-        date = contentful.date?.gmtToLocal()
+        date = contentful.dateGMT?.gmtToLocal()
         guid = contentful.guid.rendered
         link = contentful.link
-        modified = contentful.modified?.gmtToLocal()
+        modified = contentful.modifiedGMT?.gmtToLocal()
         slug = contentful.slug
         status = contentful.status
         type = contentful.type
