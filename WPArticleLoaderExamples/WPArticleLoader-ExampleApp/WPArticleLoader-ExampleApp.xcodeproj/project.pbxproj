@@ -1,0 +1,366 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D9389A1A26BC51A2003AB5A5 /* WPArticleLoader_ExampleAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9389A1926BC51A2003AB5A5 /* WPArticleLoader_ExampleAppApp.swift */; };
+		D9389A1C26BC51A2003AB5A5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9389A1B26BC51A2003AB5A5 /* MainView.swift */; };
+		D9389A1E26BC51A3003AB5A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9389A1D26BC51A3003AB5A5 /* Assets.xcassets */; };
+		D9389A2126BC51A3003AB5A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9389A2026BC51A3003AB5A5 /* Preview Assets.xcassets */; };
+		D9389A2926BC51B6003AB5A5 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9389A2826BC51B6003AB5A5 /* MainViewModel.swift */; };
+		D9389A2C26BC5215003AB5A5 /* SwiftUIWPArticleLoader in Frameworks */ = {isa = PBXBuildFile; productRef = D9389A2B26BC5215003AB5A5 /* SwiftUIWPArticleLoader */; };
+		D93CF3F726BC581500DF5830 /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93CF3F626BC581500DF5830 /* ArticleView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D9389A1626BC51A2003AB5A5 /* WPArticleLoader-ExampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WPArticleLoader-ExampleApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9389A1926BC51A2003AB5A5 /* WPArticleLoader_ExampleAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPArticleLoader_ExampleAppApp.swift; sourceTree = "<group>"; };
+		D9389A1B26BC51A2003AB5A5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D9389A1D26BC51A3003AB5A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D9389A2026BC51A3003AB5A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D9389A2226BC51A3003AB5A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9389A2826BC51B6003AB5A5 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		D93CF3F626BC581500DF5830 /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D9389A1326BC51A2003AB5A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9389A2C26BC5215003AB5A5 /* SwiftUIWPArticleLoader in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D9389A0D26BC51A2003AB5A5 = {
+			isa = PBXGroup;
+			children = (
+				D9389A1826BC51A2003AB5A5 /* WPArticleLoader-ExampleApp */,
+				D9389A1726BC51A2003AB5A5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D9389A1726BC51A2003AB5A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D9389A1626BC51A2003AB5A5 /* WPArticleLoader-ExampleApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D9389A1826BC51A2003AB5A5 /* WPArticleLoader-ExampleApp */ = {
+			isa = PBXGroup;
+			children = (
+				D9389A1926BC51A2003AB5A5 /* WPArticleLoader_ExampleAppApp.swift */,
+				D9389A1B26BC51A2003AB5A5 /* MainView.swift */,
+				D9389A2826BC51B6003AB5A5 /* MainViewModel.swift */,
+				D93CF3F626BC581500DF5830 /* ArticleView.swift */,
+				D9389A1D26BC51A3003AB5A5 /* Assets.xcassets */,
+				D9389A2226BC51A3003AB5A5 /* Info.plist */,
+				D9389A1F26BC51A3003AB5A5 /* Preview Content */,
+			);
+			path = "WPArticleLoader-ExampleApp";
+			sourceTree = "<group>";
+		};
+		D9389A1F26BC51A3003AB5A5 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D9389A2026BC51A3003AB5A5 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D9389A1526BC51A2003AB5A5 /* WPArticleLoader-ExampleApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9389A2526BC51A3003AB5A5 /* Build configuration list for PBXNativeTarget "WPArticleLoader-ExampleApp" */;
+			buildPhases = (
+				D9389A1226BC51A2003AB5A5 /* Sources */,
+				D9389A1326BC51A2003AB5A5 /* Frameworks */,
+				D9389A1426BC51A2003AB5A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WPArticleLoader-ExampleApp";
+			packageProductDependencies = (
+				D9389A2B26BC5215003AB5A5 /* SwiftUIWPArticleLoader */,
+			);
+			productName = "WPArticleLoader-ExampleApp";
+			productReference = D9389A1626BC51A2003AB5A5 /* WPArticleLoader-ExampleApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D9389A0E26BC51A2003AB5A5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					D9389A1526BC51A2003AB5A5 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = D9389A1126BC51A2003AB5A5 /* Build configuration list for PBXProject "WPArticleLoader-ExampleApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D9389A0D26BC51A2003AB5A5;
+			packageReferences = (
+				D9389A2A26BC5215003AB5A5 /* XCRemoteSwiftPackageReference "SwiftUIWPArticleLoader" */,
+			);
+			productRefGroup = D9389A1726BC51A2003AB5A5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D9389A1526BC51A2003AB5A5 /* WPArticleLoader-ExampleApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D9389A1426BC51A2003AB5A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9389A2126BC51A3003AB5A5 /* Preview Assets.xcassets in Resources */,
+				D9389A1E26BC51A3003AB5A5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D9389A1226BC51A2003AB5A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9389A1C26BC51A2003AB5A5 /* MainView.swift in Sources */,
+				D9389A1A26BC51A2003AB5A5 /* WPArticleLoader_ExampleAppApp.swift in Sources */,
+				D9389A2926BC51B6003AB5A5 /* MainViewModel.swift in Sources */,
+				D93CF3F726BC581500DF5830 /* ArticleView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D9389A2326BC51A3003AB5A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D9389A2426BC51A3003AB5A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D9389A2626BC51A3003AB5A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WPArticleLoader-ExampleApp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "WPArticleLoader-ExampleApp/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.TorbenKoehler.WPArticleLoader-ExampleApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D9389A2726BC51A3003AB5A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WPArticleLoader-ExampleApp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "WPArticleLoader-ExampleApp/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.TorbenKoehler.WPArticleLoader-ExampleApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D9389A1126BC51A2003AB5A5 /* Build configuration list for PBXProject "WPArticleLoader-ExampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9389A2326BC51A3003AB5A5 /* Debug */,
+				D9389A2426BC51A3003AB5A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9389A2526BC51A3003AB5A5 /* Build configuration list for PBXNativeTarget "WPArticleLoader-ExampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9389A2626BC51A3003AB5A5 /* Debug */,
+				D9389A2726BC51A3003AB5A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D9389A2A26BC5215003AB5A5 /* XCRemoteSwiftPackageReference "SwiftUIWPArticleLoader" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:tkoehlerlg/SwiftUIWPArticleLoader.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D9389A2B26BC5215003AB5A5 /* SwiftUIWPArticleLoader */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D9389A2A26BC5215003AB5A5 /* XCRemoteSwiftPackageReference "SwiftUIWPArticleLoader" */;
+			productName = SwiftUIWPArticleLoader;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = D9389A0E26BC51A2003AB5A5 /* Project object */;
+}

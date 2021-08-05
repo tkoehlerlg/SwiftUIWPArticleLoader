@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SwiftUIWPArticleLoader",
+        "repositoryURL": "git@github.com:tkoehlerlg/SwiftUIWPArticleLoader.git",
+        "state": {
+          "branch": null,
+          "revision": "1b58fa0aad93ed2228829005d0654b53a64c7240",
+          "version": "1.2.6"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
