@@ -53,5 +53,4 @@ handler.fetchArticles(urlRequest: request)
     .store(in: &cancellables)
 ```
 
-
 Developed by: **Torben Köhler**
