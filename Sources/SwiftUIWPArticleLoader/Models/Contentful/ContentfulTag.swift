@@ -7,10 +7,10 @@
 
 import Foundation
 
-class ContentfulTag: Tag, Decodable {
+public class ContentfulTag: Tag, Decodable {
     /// What Type the Term is.
-    let type: TermType
-    enum TermType: String, Codable {
+    public let type: TermType
+    public enum TermType: String, Codable {
         case navMenu = "nav_menu"
         case linkCategory = "link_category"
         case postFormat = "post_format"
@@ -23,7 +23,7 @@ class ContentfulTag: Tag, Decodable {
         case id, description, link, name, slug
     }
     // MARK: init
-    required init(from decoder: Decoder) throws {
+    required public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let id = try container.decode(Int.self, forKey: .id)
         let description = try? container.decode(String.self, forKey: .description)

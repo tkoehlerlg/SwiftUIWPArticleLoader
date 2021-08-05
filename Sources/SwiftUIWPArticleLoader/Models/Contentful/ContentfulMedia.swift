@@ -7,32 +7,32 @@
 
 import Foundation
 
-struct ContentfulMedia: Decodable {
+public struct ContentfulMedia: Decodable {
     /// Unique identifier for the object.
-    let id: Int
+    public let id: Int
     /// The date the object was published, in the site's timezone.
-    let date: String
+    public let date: String
     /// URL to the object.
-    let link: URL
+    public let link: URL
     /// An alphanumeric identifier for the object unique to its type.
-    let slug: String
+    public let slug: String
     /// Type of Post for the object.
-    let type: String
+    public let type: String
     /// The title for the object.
-    let title: Content
+    public let title: Content
     /// The ID for the author of the object.
-    let authorID: Int
+    public let authorID: Int
     /// The attachment description.
-    let description: Content?
+    public let description: Content?
     /// Attachment type.
-    let mediaType: MediaType
-    enum MediaType: String, Codable {
+    public let mediaType: MediaType
+    public enum MediaType: String, Codable {
         case image, file
     }
     /// The attachment MIME type.
-    let mimeType: String
+    public let mimeType: String
     /// URL to the original attachment file.
-    let sourceURL: URL
+    public let sourceURL: URL
     // MARK: CodingKeys
     enum CodingKeys: String, CodingKey {
         case authorID = "author"
@@ -42,7 +42,7 @@ struct ContentfulMedia: Decodable {
         case id, date, link, slug, type, title, description
     }
     // MARK: init
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(Int.self, forKey: .id)
         date = try container.decode(String.self, forKey: .date)

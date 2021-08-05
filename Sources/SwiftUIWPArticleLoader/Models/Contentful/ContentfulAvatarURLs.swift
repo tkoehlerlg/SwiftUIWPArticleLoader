@@ -7,13 +7,13 @@
 
 import Foundation
 
-class ContentfulAvatarURLs: Decodable {
+public class ContentfulAvatarURLs: Decodable {
     /// 24
-    let small: URL
+    public let small: URL
     /// 48
-    let medium: URL
+    public let medium: URL
     /// 96
-    let high: URL
+    public let high: URL
     // MARK: CodingKeys
     enum CodingKeys: String, CodingKey {
         case small = "24"
@@ -21,7 +21,7 @@ class ContentfulAvatarURLs: Decodable {
         case hight = "96"
     }
     // MARK: init
-    required init(from decoder: Decoder) throws {
+    required public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         small = try container.decode(URL.self, forKey: .small)
         medium = try container.decode(URL.self, forKey: .medium)

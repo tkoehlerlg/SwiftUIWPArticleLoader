@@ -26,4 +26,20 @@ struct ArticleLoadingService {
         }
         .eraseToAnyPublisher()
     }
+    func fetchContentfulArticles(urlRequest: URLRequest) -> AnyPublisher<[ContentfulArticle], Error> {
+        Deferred {
+            Future<[ContentfulArticle], Error> { promise in
+                URLSession.shared.dataTask(with: urlRequest){ (data, _, _) in
+                    guard let data = data else { return }
+                    do {
+                        let articles = try JSONDecoder().decode([ContentfulArticle].self, from: data)
+                        promise(.success(articles))
+                    } catch {
+                        promise(.failure(error))
+                    }
+                }.resume()
+            }
+        }
+        .eraseToAnyPublisher()
+    }
 }

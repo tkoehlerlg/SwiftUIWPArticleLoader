@@ -7,28 +7,28 @@
 
 import Foundation
 
-class ContentfulUser: Decodable {
+public class ContentfulUser: Decodable {
     /// Unique identifier for the user.
-    let id: Int
+    public let id: Int
     /// Display name for the user.
-    let name: String
+    public let name: String
     /// URL of the user.
-    let url: URL?
+    public let url: URL?
     /// Description of the user.
-    let description: String?
+    public let description: String?
     /// Author URL of the user.
-    let link: URL
+    public let link: URL
     /// An alphanumeric identifier for the user.
-    let slug: String
+    public let slug: String
     /// Avatar URLs for the user.
-    let avatarURLs: ContentfulAvatarURLs
+    public let avatarURLs: ContentfulAvatarURLs
     //MARK: CodingKeys
     enum CodingKeys: String, CodingKey {
         case avatarURLs = "avatar_urls"
         case id, name, url, description, link, slug
     }
     // MARK: init
-    required init(from decoder: Decoder) throws {
+    required public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(Int.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)

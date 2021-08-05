@@ -8,52 +8,52 @@
 import Foundation
 
 @available(macOS 10.12, *)
-struct ContentfulArticle: Decodable, Identifiable {
+public struct ContentfulArticle: Decodable, Identifiable {
     // MARK: Top Data
     /// Unique identifier for the object.
-    let id: Int
+    public let id: Int
     ///The date the object was published, in the site's timezone.
-    let date: Date?
+    public let date: Date?
     /// The date the object was published, as GMT.
-    let dateGMT: Date?
+    public let dateGMT: Date?
     /// The globally unique identifier for the object.
-    let guid: Content
+    public let guid: Content
     /// URL to the object.
-    let link: URL
+    public let link: URL
     /// The date the object was last modified, in the site's timezone.
-    let modified: Date?
+    public let modified: Date?
     /// The date the object was last modified, as GMT.
-    let modifiedGMT: Date?
+    public let modifiedGMT: Date?
     /// An alphanumeric identifier for the object unique to its type.
-    let slug: String
+    public let slug: String
     /// Status for the object.
-    let status: PublishStatus
+    public let status: PublishStatus
     /// Type of Post for the object.
-    let type: String
+    public let type: String
     /// The title for the object.
-    let title: Content
+    public let title: Content
     /// The format for the object.
-    let format: Format
+    public let format: Format
     // MARK: Settings
     /// Whether or not comments are open on the object.
-    let commentStatus: FeatureStatus
+    public let commentStatus: FeatureStatus
     /// Whether or not the object can be pinged.
-    let pingStatus: FeatureStatus
+    public let pingStatus: FeatureStatus
 
     // MARK: Content
     /// The content for the object.
-    let content: Content
+    public let content: Content
     /// The excerpt for the object.
-    let excerpt: Content
+    public let excerpt: Content
     /// The ID of the featured media for the object.
-    let featuredMediaID: Int
+    public let featuredMediaID: Int
     // MARK: EmbeddedData
     /// Other Data that is embedded
-    let embeddedData: EmbeddedData
-    struct EmbeddedData: Decodable {
-        let author: ContentfulUser
-        let featuredMedia: [ContentfulMedia]?
-        let terms: [ContentfulTag]?
+    public let embeddedData: EmbeddedData
+    public struct EmbeddedData: Decodable {
+        public let author: ContentfulUser
+        public let featuredMedia: [ContentfulMedia]?
+        public let terms: [ContentfulTag]?
 
         enum CodingKeys: String, CodingKey {
             case author
@@ -61,7 +61,7 @@ struct ContentfulArticle: Decodable, Identifiable {
             case terms = "wp:term"
         }
 
-        init(from decoder: Decoder) throws {
+        public init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
             author = try container.decode([ContentfulUser].self, forKey: .author).first!
             featuredMedia = try? container.decode([ContentfulMedia].self, forKey: .featuredMedia)
@@ -81,7 +81,7 @@ struct ContentfulArticle: Decodable, Identifiable {
         case id, date, guid, link, modified, slug, status, type, title, format, content, excerpt
     }
     // MARK: init
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(Int.self, forKey: .id)
         date = Date(wpFormatString: try container.decode(String.self, forKey: .date))
