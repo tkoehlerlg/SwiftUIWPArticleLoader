@@ -9,8 +9,8 @@ import Combine
 import Foundation
 
 @available(macOS 10.15, *)
-struct ArticleLoadingService {
-    func fetchArticles(urlRequest: URLRequest) -> AnyPublisher<[Article], Error> {
+public struct ArticleLoadingService {
+    public func fetchArticles(urlRequest: URLRequest) -> AnyPublisher<[Article], Error> {
         Deferred {
             Future<[Article], Error> { promise in
                 URLSession.shared.dataTask(with: urlRequest){ (data, _, _) in
@@ -26,7 +26,7 @@ struct ArticleLoadingService {
         }
         .eraseToAnyPublisher()
     }
-    func fetchContentfulArticles(urlRequest: URLRequest) -> AnyPublisher<[ContentfulArticle], Error> {
+    public func fetchContentfulArticles(urlRequest: URLRequest) -> AnyPublisher<[ContentfulArticle], Error> {
         Deferred {
             Future<[ContentfulArticle], Error> { promise in
                 URLSession.shared.dataTask(with: urlRequest){ (data, _, _) in
