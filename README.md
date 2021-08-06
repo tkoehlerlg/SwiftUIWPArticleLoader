@@ -53,4 +53,32 @@ handler.fetchArticles(urlRequest: request)
     .store(in: &cancellables)
 ```
 
+### ImageLoader
+The ImageLoader is another simplification, it loads the image for you so you don't have to, use it combination with AsyncImage:
+```swift
+// Example for the featuredImage
+AsyncImage(imageLoader: featuredImageLoader) {
+    // your Placeholder
+}
+```
+but you can also receive the Image on your own or use the URL:
+```swift
+// Image
+if let featuredImage = featuredImageLoader.image {
+    Image(uiImage: featuredImage)
+}
+// URL
+featuredImageLoader.url
+```
+The featuredImageLoader is an optinal because not every Article has an featuredImage.
+
+#### Use the ImageLoader for your URLs
+If you want to use the ImageLoader for your own URLs, probably for URLs in content you can easily initialize it and use it with AsyncImage:
+```swift
+// Example for the featuredImage
+AsyncImage(imageLoader: ImageLoader(url: URL(staticString: "youradress.com"))) {
+    // your Placeholder
+}
+```
+
 Developed by: **Torben Köhler**
