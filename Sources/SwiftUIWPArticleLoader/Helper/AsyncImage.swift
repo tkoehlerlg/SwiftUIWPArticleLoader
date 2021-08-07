@@ -10,6 +10,7 @@ import Combine
 import Foundation
 
 #if !os(macOS)
+@available(iOS 14, *)
 public struct AsyncImage<Placeholder: View>: View {
     @StateObject private var loader: ImageLoader
     private let placeholder: Placeholder
@@ -24,7 +25,7 @@ public struct AsyncImage<Placeholder: View>: View {
         _loader = StateObject(wrappedValue: imageLoader)
     }
 
-    var body: some View {
+    public var body: some View {
         content
     }
 

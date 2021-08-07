@@ -4,7 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "SwiftUIWPArticleLoader",
-    platforms: [.iOS(.v14)],
+    platforms: [.iOS(.v13)],
     products: [
         .library(
             name: "SwiftUIWPArticleLoader",
