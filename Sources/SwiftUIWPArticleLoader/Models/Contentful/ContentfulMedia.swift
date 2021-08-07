@@ -19,11 +19,11 @@ public struct ContentfulMedia: Decodable {
     /// Type of Post for the object.
     public let type: String
     /// The title for the object.
-    public let title: Content
+    let title: ContentfulContent
     /// The ID for the author of the object.
     public let authorID: Int
     /// The attachment description.
-    public let description: Content?
+    let description: ContentfulContent?
     /// Attachment type.
     public let mediaType: MediaType
     public enum MediaType: String, Codable {
@@ -49,9 +49,9 @@ public struct ContentfulMedia: Decodable {
         link = try container.decode(URL.self, forKey: .link)
         slug = try container.decode(String.self, forKey: .slug)
         type = try container.decode(String.self, forKey: .type)
-        title = try container.decode(Content.self, forKey: .title)
+        title = try container.decode(ContentfulContent.self, forKey: .title)
         authorID = try container.decode(Int.self, forKey: .authorID)
-        description = try? container.decode(Content.self, forKey: .description)
+        description = try? container.decode(ContentfulContent.self, forKey: .description)
         mediaType = try container.decode(MediaType.self, forKey: .mediaType)
         mimeType = try container.decode(String.self, forKey: .mimeType)
         sourceURL = try container.decode(URL.self, forKey: .sourceURL)

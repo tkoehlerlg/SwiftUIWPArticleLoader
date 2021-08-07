@@ -17,7 +17,7 @@ public struct ContentfulArticle: Decodable, Identifiable {
     /// The date the object was published, as GMT.
     public let dateGMT: Date?
     /// The globally unique identifier for the object.
-    public let guid: Content
+    let guid: ContentfulContent
     /// URL to the object.
     public let link: URL
     /// The date the object was last modified, in the site's timezone.
@@ -31,7 +31,7 @@ public struct ContentfulArticle: Decodable, Identifiable {
     /// Type of Post for the object.
     public let type: String
     /// The title for the object.
-    public let title: Content
+    let title: ContentfulContent
     /// The format for the object.
     public let format: Format
     // MARK: Settings
@@ -42,9 +42,9 @@ public struct ContentfulArticle: Decodable, Identifiable {
 
     // MARK: Content
     /// The content for the object.
-    public let content: Content
+    let content: ContentfulContent
     /// The excerpt for the object.
-    public let excerpt: Content
+    let excerpt: ContentfulContent
     /// The ID of the featured media for the object.
     public let featuredMediaID: Int
     // MARK: EmbeddedData
@@ -86,19 +86,19 @@ public struct ContentfulArticle: Decodable, Identifiable {
         id = try container.decode(Int.self, forKey: .id)
         date = Date(wpFormatString: try container.decode(String.self, forKey: .date))
         dateGMT = Date(wpFormatString: try container.decode(String.self, forKey: .dateGMT))
-        guid = try container.decode(Content.self, forKey: .guid)
+        guid = try container.decode(ContentfulContent.self, forKey: .guid)
         link = try container.decode(URL.self, forKey: .link)
         modified = Date(wpFormatString: try container.decode(String.self, forKey: .modified))
         modifiedGMT = Date(wpFormatString: try container.decode(String.self, forKey: .modifiedGMT))
         slug = try container.decode(String.self, forKey: .slug)
         status = try container.decode(PublishStatus.self, forKey: .status)
         type = try container.decode(String.self, forKey: .type)
-        title = try container.decode(Content.self, forKey: .title)
+        title = try container.decode(ContentfulContent.self, forKey: .content)
         format = try container.decode(Format.self, forKey: .format)
         commentStatus = try container.decode(FeatureStatus.self, forKey: .commentStatus)
         pingStatus = try container.decode(FeatureStatus.self, forKey: .pingStatus)
-        content = try container.decode(Content.self, forKey: .content)
-        excerpt = try container.decode(Content.self, forKey: .excerpt)
+        content = try container.decode(ContentfulContent.self, forKey: .content)
+        excerpt = try container.decode(ContentfulContent.self, forKey: .excerpt)
         featuredMediaID = try container.decode(Int.self, forKey: .featuredMediaID)
         embeddedData = try container.decode(EmbeddedData.self, forKey: .embeddedData)
     }
