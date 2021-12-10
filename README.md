@@ -1,6 +1,6 @@
 # SwiftUIWPArticleLoader
 
-Hello to WPArticleLoader!
+Welcome to WPArticleLoader!
 
 With the WPArticleLoader, you can easily load Articles from your WordPress Website.
 
